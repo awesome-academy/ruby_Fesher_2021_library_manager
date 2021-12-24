@@ -73,3 +73,4 @@ config/credentials.yml.enc
 /config/database.yml
 /config/application.yml
 .vscode
+spec/
