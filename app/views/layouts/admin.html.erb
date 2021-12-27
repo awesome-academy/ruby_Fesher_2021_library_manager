@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title yield :title %></title>
+    <%= render "layouts/rails_default" %>
+    <%= render "layouts/shim" %>
+  </head>
+
+  <body id="page-top">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <div id="wrapper">
+      <%= render "layouts/sidebar_admin" %>
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <%= render "layouts/topbar_admin" %>
+          <%= yield %>
+        </div>
+        <!-- End of Main Content -->
+        <%= render "layouts/footer_admin" %>
+      </div>
+      <%= render "layouts/logout_modal_admin" %>
+    </div>
+  </body>
+</html>

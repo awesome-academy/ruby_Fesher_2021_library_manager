@@ -12,22 +12,22 @@
 
 ActiveRecord::Schema.define(version: 2021_12_24_034854) do
 
-  create_table "authors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "authors", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "books", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.decimal "price", precision: 10
     t.string "description"
     t.integer "number_of_page"
     t.integer "quantity"
-    t.bigint "author_id"
-    t.bigint "publisher_id"
-    t.bigint "category_id"
+    t.bigint "author_id", null: false
+    t.bigint "publisher_id", null: false
+    t.bigint "category_id", null: false
     t.integer "rate_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(version: 2021_12_24_034854) do
     t.index ["rate_score"], name: "index_books_on_rate_score"
   end
 
-  create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "categories", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "comments", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "commentable_type"
     t.integer "commentable_id"
     t.bigint "user_id", null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2021_12_24_034854) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "follows", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "follows", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "followable_type"
     t.integer "followable_id"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2021_12_24_034854) do
     t.index ["user_id"], name: "index_follows_on_user_id"
   end
 
-  create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "likes", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "likeable_type"
     t.integer "likeable_id"
@@ -81,14 +81,14 @@ ActiveRecord::Schema.define(version: 2021_12_24_034854) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "publishers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "publishers", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "desscription"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "requests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "requests", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "book_id", null: false
     t.timestamp "begin_day"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2021_12_24_034854) do
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
@@ -110,7 +110,6 @@ ActiveRecord::Schema.define(version: 2021_12_24_034854) do
     t.boolean "is_permited"
     t.string "address"
     t.string "phone"
-    t.string "string"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email"
