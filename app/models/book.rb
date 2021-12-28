@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
-  belongs_to :author
-  belongs_to :publisher
-  belongs_to :category
+  belongs_to :author, optional: true
+  belongs_to :publisher, optional: true
+  belongs_to :category, optional: true
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :likes, as: :likeable, dependent: :destroy
   has_many :follows, as: :followable, dependent: :destroy

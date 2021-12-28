@@ -21,3 +21,9 @@ User.create!(name: "Lê Phương Tây",
       address: address,
       phone: phone)
   end
+  50.times do |n|
+    name = Faker::Name.name
+    descripton = Faker::Lorem.paragraph
+    Author.create!(name: name,
+      description: descripton)
+  end

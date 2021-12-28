@@ -16,10 +16,52 @@ en:
       manager: "Manager"
       users: "Users"
       requests: "Borrow requests"
+      author: "Authors"
+    topbar_admin:
+      profile: "Hồ sơ"
+      settings: "Cài đặt"
+      logout: "Đăng xuất"
   admin:
     admin:
       index:
         title: "Dashboard"
+    authors:
+      form:
+        name: "Author's name"
+        description: "Description"
+      new:
+        title: "Add Author"
+        submit: "Add"
+        add: "Create new author"
+      index:
+        title: "Authors"
+        delete: "Delete"
+        rusure: "Are you sure"
+        edit: "Edit"
+        add: "Add"
+      author:
+        delete: "Delete"
+        rusure: "Are you sure"
+        edit: "Edit"
+        add: "Add"
+      edit:
+        submit: "Update"
+        title: "Update author"
+      update:
+        success: " Author updated"
+        fail: "Author update failed"
+      destroy:
+        fail: "Delete fail"
+        success: "Author deleted"
+      show:
+        delete: "Delete"
+        rusure: "Are you sure"
+        edit: "Edit"
+        add: "Add"
+        fail: "Author load fail"
+      create:
+        success: "Author Created"
+        fail: "Author create failed"
   sessions:
     new:
       title: "Login"
@@ -29,3 +71,11 @@ en:
       password_holder: "Password"
     create:
       invalid: "Invalid email/password"
+  shared:
+    error_messages:
+      valid: "Invalid Data"
+      error: "Errors"
+  pagy:
+    nav:
+      prev: "Prev"
+      next: "Next"

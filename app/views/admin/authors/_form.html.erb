@@ -1,0 +1,16 @@
+<div class="col-lg-7">
+  <div class="p-5">
+    <%= form_for [:admin, @author] do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <div class="form-group">
+        <%= f.label :name, t(".name") %> <span class="required_field">*</span>
+        <%= f.text_field :name, {class: "form-control"} %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description, t(".description") %> <span class="required_field">*</span>
+        <%= f.text_area :description, {class: "form-control", rows: Settings.length.text_row} %>
+      </div>
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

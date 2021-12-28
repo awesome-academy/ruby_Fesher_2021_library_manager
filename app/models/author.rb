@@ -6,4 +6,11 @@ class Author < ApplicationRecord
   has_many :users_comments, through: :comments, source: :user
   has_many :users_likes, through: :likes, source: :user
   has_many :users_follows, through: :follows, source: :user
+
+  scope :recent_added, ->{order created_at: :desc}
+
+  PROPERTIES = %i(name description).freeze
+  validates :name, presence: true,
+    length: {maximum: Settings.length.user_name_max}
+  validates :description, presence: true
 end

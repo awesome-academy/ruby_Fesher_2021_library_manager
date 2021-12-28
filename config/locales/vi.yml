@@ -16,15 +16,52 @@ vi:
       manager: "Quản lý"
       users: "Người dùng"
       requests: "Đơn mượn"
+      author: "Tác giả"
     topbar_admin:
       profile: "Hồ sơ"
       settings: "Cài đặt"
       logout: "Đăng xuất"
-      search: "Nhập nội dung tìm kiếm"
   admin:
     admin:
       index:
         title: "Trang chủ"
+    authors:
+      form:
+        name: "Tên tác giả"
+        description: "Mô tả về tác giả"
+      new:
+        title: "Thêm tác giả"
+        submit: "Thêm"
+        add: "Thêm tác giả mới"
+      index:
+        title: "Tác giả"
+        delete: "Xoá"
+        rusure: "Bạn chắc chứ?"
+        edit: "Chỉnh sửa"
+        add: "Thêm"
+      author:
+        delete: "Xoá"
+        rusure: "Bạn chắc chứ?"
+        edit: "Chỉnh sửa"
+        add: "Thêm"
+      edit:
+        submit: "Cập nhật"
+        title: "Chỉnh sửa tác giả"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+      destroy:
+        fail: "Xoá thất bại"
+        success: "Xoá thành công"
+      show:
+        delete: "Xoá"
+        rusure: "Bạn chắc chứ?"
+        edit: "Chỉnh sửa"
+        add: "Thêm"
+        fail: "Không tìm thấy tác giả"
+      create:
+        success: "Tạo tác giả thành công"
+        fail: "Tạo tác giả thất bại"
   sessions:
     new:
       title: "Đăng nhập"
@@ -34,3 +71,11 @@ vi:
       password_holder: "mật khẩu"
     create:
       invalid: "Email hoặc mật khẩu không đúng"
+  shared:
+    error_messages:
+      valid: "Dữ liệu nhập chưa đúng quy định"
+      error: "Lỗi"
+  pagy:
+    nav:
+      prev: "Trước"
+      next: "Tiếp"
