@@ -1,0 +1,36 @@
+vi:
+  hello: "Chào thế giới"
+  layouts:
+    admin:
+      title: "Quản lý thư viện LPWANW"
+    logout_modal_admin:
+      leave: "Muốn out rồi à?"
+      p1: "Nhấn vào nút `Đăng xuất` bên dưỡi để kết thúc phiên làm việc"
+      cancle: "Huỷ"
+      logout: "Đăng xuất"
+    application:
+      title: "Thư viện LPWANW"
+    sidebar_admin:
+      brand: "LPWANW"
+      dashboard: "bảng điều khiển"
+      manager: "Quản lý"
+      users: "Người dùng"
+      requests: "Đơn mượn"
+    topbar_admin:
+      profile: "Hồ sơ"
+      settings: "Cài đặt"
+      logout: "Đăng xuất"
+      search: "Nhập nội dung tìm kiếm"
+  admin:
+    admin:
+      index:
+        title: "Trang chủ"
+  sessions:
+    new:
+      title: "Đăng nhập"
+      welcome: "Hê quay lại rồi hả"
+      submit: "Đăng nhập"
+      email_holder: "Email đăng nhập..."
+      password_holder: "mật khẩu"
+    create:
+      invalid: "Email hoặc mật khẩu không đúng"

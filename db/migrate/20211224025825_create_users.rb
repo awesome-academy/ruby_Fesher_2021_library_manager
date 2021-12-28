@@ -9,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.boolean :is_permited
       t.string :address
       t.string :phone
-      t.string :string
 
       t.timestamps
     end

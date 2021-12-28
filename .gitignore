@@ -74,3 +74,7 @@ config/credentials.yml.enc
 /config/application.yml
 .vscode
 spec/
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

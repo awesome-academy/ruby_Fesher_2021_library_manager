@@ -40,4 +40,25 @@ class User < ApplicationRecord
     as: :followable, dependent: :destroy
   has_many :followers, through: :passive_follows,
     source: :user
+
+  PROPERTIES =
+    %i(name email address phone password password_confirmation).freeze
+  validates :name, presence: true,
+    length: {maximum: Settings.length.user_name_max}
+  validates :email, presence: true,
+    length: {maximum: Settings.length.email_max},
+    format: {with: Settings.regex.email},
+    uniqueness: {case_sensitive: false}
+  validates :password, presence: true,
+    length: {minimum: Settings.length.password_min},
+    allow_nil: true, if: :password
+  validates :address, presence: true,
+    length: {minimum: Settings.length.password_min}
+  validates :phone, presence: true,
+    format: {with: Settings.regex.phone}
+  has_secure_password
+
+  def is_admin?
+    is_admin
+  end
 end
