@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   scope "(:locale)", locale: /en|vi/ do
     namespace :admin do
       root "admin#index"
+      resources :authors
     end
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"

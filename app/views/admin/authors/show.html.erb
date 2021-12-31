@@ -1,0 +1,18 @@
+
+<% provide:title, @author.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @author.name %>
+      </h1>
+      <p>
+        <%= @author.description %>
+      </p>
+        <%= link_to t(".edit"), edit_admin_author_path(@author),
+          class: "btn btn-warning" %>
+        <%= link_to t(".delete"), [:admin, @author], method: :delete,
+          class: "btn btn-danger", data: { confirm: t(".rusure") } %>
+    </section>
+  </aside>
+</div>

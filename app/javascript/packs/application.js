@@ -6,9 +6,11 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "@fortawesome/fontawesome-free/css/all"
 require("jquery")
 import "bootstrap"
 require("./sb-admin-2")
+global.toastr = require("toastr")
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

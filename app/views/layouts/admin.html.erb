@@ -7,9 +7,6 @@
   </head>
 
   <body id="page-top">
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
     <div id="wrapper">
       <%= render "layouts/sidebar_admin" %>
       <div id="content-wrapper" class="d-flex flex-column">
@@ -23,5 +20,6 @@
       </div>
       <%= render "layouts/logout_modal_admin" %>
     </div>
+    <%= toastr_flash.html_safe %>
   </body>
 </html>

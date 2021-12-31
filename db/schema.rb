@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2021_12_24_034854) do
     t.string "description"
     t.integer "number_of_page"
     t.integer "quantity"
-    t.bigint "author_id", null: false
-    t.bigint "publisher_id", null: false
-    t.bigint "category_id", null: false
+    t.bigint "author_id"
+    t.bigint "publisher_id"
+    t.bigint "category_id"
     t.integer "rate_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
