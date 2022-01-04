@@ -1,6 +1,6 @@
 <div class="col-lg-7">
   <div class="p-5">
-    <%= form_for [:admin, @author] do |f| %>
+    <%= form_for [:admin, @publisher] do |f| %>
       <%= render "shared/error_messages", object: f.object %>
       <div class="form-group">
         <%= f.label :name, t(".name"), {class: "required"} %>

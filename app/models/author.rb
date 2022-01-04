@@ -1,4 +1,6 @@
 class Author < ApplicationRecord
+  PROPERTIES = %i(name description).freeze
+
   has_many :books, dependent: :nullify
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :likes, as: :likeable, dependent: :destroy
@@ -9,7 +11,6 @@ class Author < ApplicationRecord
 
   scope :recent_added, ->{order created_at: :desc}
 
-  PROPERTIES = %i(name description).freeze
   validates :name, presence: true,
     length: {maximum: Settings.length.user_name_max}
   validates :description, presence: true

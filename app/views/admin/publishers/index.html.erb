@@ -4,12 +4,12 @@
 </h1>
 <div class="row">
   <div class="col curd-container">
-    <%= link_to t(".add"), new_admin_author_path, class: "btn btn-success" %>
+    <%= link_to t(".add"), new_admin_publisher_path, class: "btn btn-success" %>
   </div>
 </div>
 <hr class="sidebar-divider">
 <%== pagy_bootstrap_nav(@pagy) %>
 <ul>
-  <%= render partial: "author", collection: @authors %>
+  <%= render partial: :publisher , collection: @publishers %>
 </ul>
 <%== pagy_bootstrap_nav(@pagy) %>

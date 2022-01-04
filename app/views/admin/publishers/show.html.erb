@@ -1,16 +1,16 @@
-<% provide:title, @author.name %>
+<% provide:title, @publisher.name %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @author.name %>
+        <%= @publisher.name %>
       </h1>
       <p>
-        <%= @author.description %>
+        <%= @publisher.description %>
       </p>
-        <%= link_to t(".edit"), edit_admin_author_path(@author),
+        <%= link_to t(".edit"), edit_admin_publisher_path(@publisher),
                     class: "btn btn-warning" %>
-        <%= link_to t(".delete"), [:admin, @author], method: :delete,
+        <%= link_to t(".delete"), [:admin, @publisher], method: :delete,
                     class: "btn btn-danger", data: { confirm: t(".rusure") } %>
     </section>
   </aside>

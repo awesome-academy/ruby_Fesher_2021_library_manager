@@ -17,6 +17,7 @@ vi:
       users: "Người dùng"
       requests: "Đơn mượn"
       author: "Tác giả"
+      publisher: "Nhà xuất bản"
     topbar_admin:
       profile: "Hồ sơ"
       settings: "Cài đặt"
@@ -62,6 +63,40 @@ vi:
       create:
         success: "Tạo tác giả thành công"
         fail: "Tạo tác giả thất bại"
+    publishers:
+      index:
+        title: "Nhà xuất bản"
+        rusure: "Bạn chắc chứ?"
+        edit: "Chỉnh sửa"
+        add: "Thêm"
+      publisher:
+        edit: "Sửa"
+        delete: "Xoá"
+        rusure: "Bạn chắc chứ??"
+      form:
+        name: "Tên nhà xuất bản"
+        description: "Mô tả chi tiết"
+      new:
+        title: "Thêm nhà xuất bản"
+        add: "Thêm nhà xuất bản"
+        submit: "Thêm"
+      show:
+        edit: "Sửa"
+        delete: "Xoá"
+        rusure: "Bạn chắc chứ?"
+        fail: "Không tìm thấy nhà xuất bản"
+      edit:
+        title: "Cập nhật nhà xuất bản"
+        submit: "Cập nhật"
+      create:
+        success: "Tạo nhà xuất bản thành công"
+        fail: "Tạo nhà xuất bản thất bại"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+      destroy:
+        success: "Xoá nhà xuất bản thành công"
+        fail: "Xoá nhà xuất bản thất bại"
   sessions:
     new:
       title: "Đăng nhập"
