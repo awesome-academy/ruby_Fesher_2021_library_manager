@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2021_12_24_034854) do
 
   create_table "publishers", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
-    t.string "desscription"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

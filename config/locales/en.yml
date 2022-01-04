@@ -17,6 +17,7 @@ en:
       users: "Users"
       requests: "Borrow requests"
       author: "Authors"
+      publisher: "Publisher"
     topbar_admin:
       profile: "Hồ sơ"
       settings: "Cài đặt"
@@ -62,6 +63,40 @@ en:
       create:
         success: "Author Created"
         fail: "Author create failed"
+    publishers:
+      index:
+        title: "Publisher"
+        rusure: "Are you sure?"
+        edit: "Edit"
+        add: "Add"
+      publisher:
+        edit: "Edit"
+        delete: "Delete"
+        rusure: "Are you sure"
+      form:
+        name: "Publisher's name"
+        description: "Description"
+      new:
+        title: "Add publisher"
+        add: "Add Publisher"
+        submit: "Add"
+      show:
+        edit: "Edit"
+        delete: "Delete"
+        rusure: "Are you sure"
+        fail: "Publisher not found"
+      edit:
+        title: "Update publisher"
+        submit: "Update"
+      create:
+        success: "Successfull create new publisher"
+        fail: "Create new fail"
+      update:
+        success: "Successfull update new publisher"
+        fail: "Update fail"
+      destroy:
+        success: "Successfull delete new publisher"
+        fail: "Delete fail"
   sessions:
     new:
       title: "Login"
