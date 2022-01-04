@@ -1,0 +1,14 @@
+<% provide:title, @category.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @category.name %>
+      </h1>
+        <%= link_to t(".edit"), edit_admin_category_path(@category),
+          class: "btn btn-warning" %>
+        <%= link_to t(".delete"), [:admin, @category], method: :delete,
+          class: "btn btn-danger", data: { confirm: t(".rusure") } %>
+    </section>
+  </aside>
+</div>
