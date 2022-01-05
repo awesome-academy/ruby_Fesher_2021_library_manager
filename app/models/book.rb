@@ -11,4 +11,10 @@ class Book < ApplicationRecord
   has_many :users_comments, through: :comments, source: :user
   has_many :users_likes, through: :likes, source: :user
   has_many :users_follows, through: :follows, source: :user
+  delegate :name, to: :author, prefix: true
+  delegate :name, to: :publisher, prefix: true
+
+  def requested_book
+    update quantity: quantity - Settings.length.one
+  end
 end

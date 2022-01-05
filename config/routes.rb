@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-
+    resources :requests, only: %i(new create)
     namespace :admin do
       root "admin#index"
       resources :authors

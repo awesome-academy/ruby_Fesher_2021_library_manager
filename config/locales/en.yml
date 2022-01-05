@@ -144,12 +144,36 @@ en:
       password_holder: "Password"
     create:
       invalid: "Invalid email/password"
+  requests:
+    create:
+      success: "Successful created borrow request"
+      fail: "Fail to create borrow request"
+    new:
+      please_login: "Please log in"
+      book: "Book not found"
+    errors:
+      past: "must be after today"
+      behind: "must be after begin day"
+      less_than_zero: "is zero No more to borrow"
+      beginday: "Begin day"
+      endday: "End day"
+      quantity: "Book's quantity"
+    book:
+      author: "Author"
+      publisher: "Publisher"
+      price: "Price"
+      description: "Description"
+    request_form:
+      beginday: "Begin day"
+      endday: "End day"
+      submit: "Confirm"
   shared:
     error_messages:
       valid: "Invalid Data"
       error: "Errors"
     book:
       borrow: "Make borrow request"
+      quantity: "Amount"
   pagy:
     nav:
       prev: "Prev"

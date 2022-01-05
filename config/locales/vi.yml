@@ -144,12 +144,36 @@ vi:
       password_holder: "mật khẩu"
     create:
       invalid: "Email hoặc mật khẩu không đúng"
+  requests:
+    create:
+      success: "Đặt mượn sách thành công"
+      fail: "Đặt mượn sách thất bại"
+    new:
+      please_login: "Đăng nhập trước khi tiến hành đặt mượn sách"
+      book: "Không tìm thấy sách"
+    errors:
+      past: "phải sau ngày hiện tại"
+      behind: "phải sau ngày mượn"
+      less_than_zero: "đã hết"
+      beginday: "Ngày mượn"
+      endday: "Ngày trả"
+      quantity: "Sách"
+    book:
+      author: "Tác giả"
+      publisher: "Nhà xuất bản"
+      price: "Giá"
+      description: "Mô tả"
+    request_form:
+      beginday: "Ngày mượn"
+      endday: "Ngày trả"
+      submit: "Xác nhận"
   shared:
     error_messages:
       valid: "Dữ liệu nhập chưa đúng quy định"
       error: "Lỗi"
     book:
       borrow: "Mượn sách"
+      quantity: "Số lượng"
   pagy:
     nav:
       prev: "Trước"
