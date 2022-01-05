@@ -34,6 +34,27 @@ User.create!(name: "Lê Phương Tây",
       description: descripton)
   end
   10.times do |n|
-    name = "Sách "<< Faker::Name.name
+    name = "Mục "<< Faker::Name.name
     Category.create!(name: name)
+  end
+  50.times do |n|
+    name = "Sách "<< Faker::Name.name
+    price = rand(2..100)*10000
+    description = Faker::Lorem.paragraph
+    number_of_page = rand(100..500)
+    quantity = rand(1..20)
+    author_id = rand(1..10)
+    publisher_id = rand(1..10)
+    category_id = rand(1..10)
+    rate_score = rand(0..5)
+    Book.create!(name: name,
+                 price: price,
+                 description: description,
+                 number_of_page: number_of_page,
+                 quantity: quantity,
+                 author_id: author_id,
+                 publisher_id: publisher_id,
+                 category_id: category_id,
+                 rate_score: rate_score
+                )
   end

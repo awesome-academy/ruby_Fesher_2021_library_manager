@@ -23,6 +23,10 @@ vi:
       profile: "Hồ sơ"
       settings: "Cài đặt"
       logout: "Đăng xuất"
+    navigation:
+      brand: "LPWANW"
+      home: "Trang chủ"
+      category: "Danh mục"
   admin:
     admin:
       index:
@@ -144,6 +148,8 @@ vi:
     error_messages:
       valid: "Dữ liệu nhập chưa đúng quy định"
       error: "Lỗi"
+    book:
+      borrow: "Mượn sách"
   pagy:
     nav:
       prev: "Trước"

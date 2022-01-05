@@ -5,6 +5,6 @@ class AdminsController < ApplicationController
 
   private
   def require_admin
-    redirect_to login_url unless current_user.is_admin?
+    redirect_to root_url unless current_user.is_admin?
   end
 end

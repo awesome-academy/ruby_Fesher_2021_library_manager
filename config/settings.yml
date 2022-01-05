@@ -3,6 +3,9 @@ length:
   email_max: 255
   user_name_max: 50
   text_row: 3
+  home_items: 12
+  rate: 5
+  top_category: 5
 regex:
   email: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   phone: !ruby/regexp /(84|0[3|5|7|8|9])+([0-9]{8})\b/i

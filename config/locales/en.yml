@@ -23,6 +23,10 @@ en:
       profile: "Hồ sơ"
       settings: "Cài đặt"
       logout: "Đăng xuất"
+    navigation:
+      brand: "LPWANW"
+      home: "Home"
+      category: "Category"
   admin:
     admin:
       index:
@@ -144,6 +148,8 @@ en:
     error_messages:
       valid: "Invalid Data"
       error: "Errors"
+    book:
+      borrow: "Make borrow request"
   pagy:
     nav:
       prev: "Prev"
