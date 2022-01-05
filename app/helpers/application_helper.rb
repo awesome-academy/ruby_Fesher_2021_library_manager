@@ -16,4 +16,8 @@ module ApplicationHelper
       flash_messages << text if message
     end.join("\n")
   end
+
+  def load_category
+    Category.all.take(Settings.length.top_category)
+  end
 end

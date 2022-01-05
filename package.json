@@ -8,6 +8,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
     "bootstrap": "4.3.1",
+    "bootstrap-icons": "^1.7.2",
     "bootstrap-sass": "^3.4.1",
     "font-awesome": "^4.7.0",
     "font-awesome-sass": "^4.7.0",

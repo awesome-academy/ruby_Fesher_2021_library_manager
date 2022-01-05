@@ -9,6 +9,8 @@ import "channels"
 import "@fortawesome/fontawesome-free/css/all"
 require("jquery")
 import "bootstrap"
+import "bootstrap-icons/font/bootstrap-icons.css"
+import "bootstrap-sass"
 require("./sb-admin-2")
 global.toastr = require("toastr")
 Rails.start()
