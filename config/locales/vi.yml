@@ -18,6 +18,7 @@ vi:
       requests: "Đơn mượn"
       author: "Tác giả"
       publisher: "Nhà xuất bản"
+      category: "Danh mục"
     topbar_admin:
       profile: "Hồ sơ"
       settings: "Cài đặt"
@@ -97,6 +98,39 @@ vi:
       destroy:
         success: "Xoá nhà xuất bản thành công"
         fail: "Xoá nhà xuất bản thất bại"
+    categories:
+      index:
+        title: "Danh mục"
+        rusure: "Bạn chắc chứ?"
+        edit: "Chỉnh sửa"
+        add: "Thêm"
+      category:
+        edit: "Sửa"
+        delete: "Xoá"
+        rusure: "Bạn chắc chứ??"
+      form:
+        name: "Tên danh mục"
+      new:
+        title: "Thêm danh mục"
+        add: "Thêm danh mục"
+        submit: "Thêm"
+      show:
+        edit: "Sửa"
+        delete: "Xoá"
+        rusure: "Bạn chắc chứ?"
+        fail: "Không tìm thấy danh mục"
+      edit:
+        title: "Cập nhật danh mục"
+        submit: "Cập nhật"
+      create:
+        success: "Tạo danh mục thành công"
+        fail: "Tạo danh mục thất bại"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+      destroy:
+        success: "Xoá danh mục thành công"
+        fail: "Xoá danh mục thất bại"
   sessions:
     new:
       title: "Đăng nhập"

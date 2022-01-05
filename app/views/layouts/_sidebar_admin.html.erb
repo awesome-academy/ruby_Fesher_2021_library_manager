@@ -46,6 +46,12 @@
       <%= t ".publisher" %>
     <% end %>
   </li>
+  <li class="nav-item">
+    <%= link_to admin_categories_path, {class: "nav-link"} do %>
+      <i class="fas fa-fw fa-list-ol"></i>
+      <%= t ".category" %>
+    <% end %>
+  </li>
 
   <!-- Divider -->
   <hr class="sidebar-divider">

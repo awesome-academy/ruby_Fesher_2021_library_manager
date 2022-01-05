@@ -33,3 +33,7 @@ User.create!(name: "Lê Phương Tây",
     Publisher.create!(name: name,
       description: descripton)
   end
+  10.times do |n|
+    name = "Sách "<< Faker::Name.name
+    Category.create!(name: name)
+  end
