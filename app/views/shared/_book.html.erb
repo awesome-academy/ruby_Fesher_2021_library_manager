@@ -15,19 +15,27 @@
         <!-- Product price-->
         <%= number_to_currency book.price, locale: :vi %>
         <div class="d-flex justify-content-center small text-warning mb-2">
-          <% book.rate_score.round().times do %>
+          <% load_fill_star(book).times do %>
             <div class="bi-star-fill"></div>
           <% end %>
-          <% (Settings.length.rate - book.rate_score.round()).times do %>
+          <% load_no_fill_star(book).times do %>
             <div class="bi-star"></div>
           <% end %>
         </div>
+        <%= t ".quantity" %> : <%= book.quantity %>
       </div>
     </div>
     <!-- Product actions-->
+
     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
       <div class="text-center">
-        <%= link_to t(".borrow"), "#", {class: "btn btn-outline-dark mt-auto"} %>
+        <% if book.quantity > Settings.length.zero %>
+          <%= link_to t(".borrow"), new_request_path(book_id: book.id), {class: "btn btn-outline-dark mt-auto"} %>
+        <% else %>
+          <button type="button" class="btn btn-outline-dark mt-auto" disabled>
+            <%= t(".borrow") %>
+          </button>
+        <% end %>
       </div>
     </div>
   </div>

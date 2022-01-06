@@ -7,9 +7,11 @@
   </head>
   <body>
     <%= render "layouts/navigation" %>
-    <section class="py-5">
-      <%= yield %>
-    </section>
+    <div class="container px-4 px-lg-5 mt-5">
+      <section class="py-5">
+        <%= yield %>
+      </section>
+    </div>
     <%= render "layouts/logout_modal_admin" %>
     <%= toastr_flash.html_safe %>
     <%= render "layouts/footer" %>

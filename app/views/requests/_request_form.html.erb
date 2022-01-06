@@ -1,0 +1,13 @@
+<%= form_for(@request) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.hidden_field :book_id, value: @book.id %>
+  <div class="form-group">
+    <%= f.label :begin_day, t(".beginday") %>
+    <%= f.date_field :begin_day, value: Date.today, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :end_day, t(".endday") %>
+    <%= f.date_field :end_day, value: Date.today + 2, class: "form-control" %>
+  </div>
+  <%= f.submit t(".submit"), class: "btn btn-primary" %>
+<% end %>
