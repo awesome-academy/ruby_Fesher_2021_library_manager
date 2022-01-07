@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :users, except: %i(index destroy)
     resources :account_activations, only: %i(edit)
     resources :password_resets, except: %i(index show destroy)
+    resources :comments, only: %i(create)
+    resources :books, only: %i(show)
     namespace :admin do
       root "admin#index"
       resources :authors

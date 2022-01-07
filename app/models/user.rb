@@ -7,6 +7,7 @@ class User < ApplicationRecord
   before_create :create_activation_digest
 
   has_many :requests, dependent: :destroy
+  has_many :comments, dependent: :destroy
   # follow
   has_many :follow_books, ->{where followable_type: Book.name},
            class_name: Follow.name, dependent: :destroy

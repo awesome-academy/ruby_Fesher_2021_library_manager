@@ -5,7 +5,7 @@ class CreateComments < ActiveRecord::Migration[6.1]
       t.integer :commentable_id
       t.references :user, null: false, foreign_key: true
       t.string :content
-      t.integer :rate_score
+      t.integer :rate_score, default: 0
 
       t.timestamps
     end

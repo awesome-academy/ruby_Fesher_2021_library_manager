@@ -82,8 +82,8 @@ RSpec.describe UsersController, type: :controller do
         get :edit, params: {locale: I18n.locale, id: user.id}
       end
 
-      it "should redirect to root" do
-        expect(response).to redirect_to root_path
+      it "should redirect to login" do
+        expect(response).to redirect_to login_path
       end
     end
 
@@ -134,8 +134,8 @@ RSpec.describe UsersController, type: :controller do
         post :update, params: {locale: I18n.locale, id: user.id}
       end
 
-      it "should redirect to root" do
-        expect(response).to redirect_to root_path
+      it "should redirect to login" do
+        expect(response).to redirect_to login_path
       end
     end
 
@@ -168,7 +168,7 @@ RSpec.describe UsersController, type: :controller do
         post :update, params: {locale: I18n.locale, user: user_params, id: user_first.id}
       end
 
-      it "render edit" do
+      it "redirect to root path" do
         expect(response).to redirect_to root_path
       end
     end

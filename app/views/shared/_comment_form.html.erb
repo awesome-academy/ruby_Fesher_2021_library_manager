@@ -1,0 +1,20 @@
+<%= form_for(@comment, remote: true) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.hidden_field :commentable_id, value: locals[:id] %>
+  <%= f.hidden_field :commentable_type, value: locals[:type] %>
+  <div class="d-flex flex-row align-items-start">
+    <%= gravatar_for current_user, classes: "rounded-circle", size: Settings.length.image_size %>
+    <%= f.text_area :content, {class: "form-control ml-1 shadow-none textarea"} %>
+  </div>
+  <div class="mt-2">
+    <div class="rating">
+      <div class="text-right">
+        <%= f.submit t(".post"), class: "btn btn-primary btn-sm shadow-none"%>
+      </div>
+      <% (1..5).reverse_each do |index| %>
+        <%= f.radio_button :rate_score, index, {id: index} %>
+        <label for="<%= index %>">☆</label>
+      <% end %>
+    </div>
+  </div>
+<% end %>

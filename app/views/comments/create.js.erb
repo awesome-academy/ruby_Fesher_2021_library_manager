@@ -1,0 +1,6 @@
+$('#comment_form').html('<%= j render "shared/comment_form", locals: {id: @commentable.id, type: @commentable.class.name}  %>');
+$('#comment-section').html('<%= j render partial: "shared/comment", collection: @comments %>');
+$('#comment_count').html('<%= @comments.count %>');
+<% unless @comment_build.valid? %>
+  toastr.error('<%= j t ".fail" %>')
+<% end %>

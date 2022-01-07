@@ -241,6 +241,12 @@ vi:
       msgrejected: "Từ chối yêu cầu mượn sách?"
       msgdelivered: "Xác nhận đã giao sách?"
       msgclient_rejected: "Xác nhận huỷ yêu cầu"
+    comment:
+      posted: "Đã đăng %{time} trước"
+    comment_form:
+      post: "Nhận xét"
+    interact_form:
+      please_login: "Đăng nhập để thực hiện"
   users:
     show:
       user_name: "Tên người dùng"
@@ -297,7 +303,8 @@ vi:
     new:
       title: "Đặt lại mật khẩu"
       forgot_password: "Bạn quên mật khẩu rồi ư"
-      p1: "Chỉ cần nhập email vào bên dưới để nhận được email đặt lại mật khẩu"
+      p1: "Chỉ cần nhập email vào bên dưới để nhận được email đặt lại mật khẩu
+            Thông qua đường dẫn đính kèm"
       submit: "Xác nhận"
       signup: "Đăng ký"
       login: "Đăng nhập"
@@ -313,6 +320,20 @@ vi:
       p2: "Link này sẽ hết hạn sau 2 giờ"
       p3: "Nếu bạn không phải người thực hiện yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này
         và mật khẩu của bạn sẽ không bị thay đổi"
+  comments:
+    create:
+      success: "Nhận xét thành công"
+      fail: "Không thể tạo nhận xét"
+  books:
+    book:
+      author: "Tác giả"
+      publisher: "Nhà xuất bản"
+      price: "Giá"
+      description: "Mô tả"
+    comment_form:
+      post: "Nhận xét"
+    show:
+      not_found: "Không tìm thấy sách"
   pagy:
     nav:
       prev: "Trước"
