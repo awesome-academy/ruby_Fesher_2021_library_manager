@@ -19,6 +19,7 @@ vi:
       author: "Tác giả"
       publisher: "Nhà xuất bản"
       category: "Danh mục"
+      request: "Yêu cầu mượn"
     topbar_admin:
       profile: "Hồ sơ"
       settings: "Cài đặt"
@@ -135,6 +136,36 @@ vi:
       destroy:
         success: "Xoá danh mục thành công"
         fail: "Xoá danh mục thất bại"
+    requests:
+      status_form:
+        returned: "Trả sách"
+        confirmed: "Xác nhận"
+        rejected: "Từ chối"
+        delivered: "Giao sách"
+        msgreturned: "Xác nhận khách hàng đã trả sách?"
+        msgconfirmed: "Xác nhận yêu cầu mượn sách?"
+        msgrejected: "Từ chối yêu cầu mượn sách?"
+        msgdelivered: "Xác nhận đã giao sách?"
+      badge:
+        fresh: "Mới"
+        confirmed: "Đã xác nhận"
+        delivered: "Đã giao"
+        rejected: "Đã từ chối"
+        returned: "Đã trả sách"
+        expired: "Quá hạn"
+      index:
+        id: "ID"
+        user_name: "Tên người dùng"
+        book_name: "Tên sách"
+        begin_day: "Ngày mượn"
+        end_day: "Ngày trả"
+        status: "Trạng thái"
+        update: "Cập nhật"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+      load_request:
+        fail: "Không tìm thấy yêu cầu"
   sessions:
     new:
       title: "Đăng nhập"

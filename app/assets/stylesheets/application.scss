@@ -19,3 +19,71 @@
   content:" *";
   color: $red;
 }
+
+.btn-returned{
+  color: $white;
+  background-color: $return-bg;
+  border-color: $return-bg;
+}
+
+.btn-delivered{
+  color: $white;
+  background-color: $delivered_bg;
+  border-color: $delivered_bg;
+}
+
+.btn-rejected{
+  color: $white;
+  background-color: $rejected-bg;
+  border-color: $rejected-bg;
+}
+
+.btn-confirmed{
+  color: $white;
+  background-color: $confirmed-bg;
+  border-color: $confirmed-bg;
+}
+
+.edit_request{
+  display: inline-block !important;
+}
+
+.badge-fresh{
+  color: $white;
+  background-color: $fresh-bg;
+}
+
+.badge-confirmed{
+  color: $white;
+  background-color: $confirmed-bg;
+}
+
+.badge-delivered{
+  color: $white;
+  background-color: $delivered-bg;
+}
+
+.badge-rejected{
+  color: $white;
+  background-color: $rejected-bg;
+}
+
+.badge-returned{
+  color: $white;
+  background-color: $return-bg;
+}
+
+.badge-expired{
+  color: $white;
+  background-color: $expired-bg;
+}
+
+.badges {
+  display: inline-block;
+  padding: .25em .4em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+}
