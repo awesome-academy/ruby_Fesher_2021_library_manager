@@ -3,7 +3,8 @@ User.create!(name: "Lê Phương Tây",
   password: "lephuongtay",
   password_confirmation: "lephuongtay",
   is_admin: true,
-  is_permited: true,
+  activated: true,
+  activated_at: Time.zone.now,
   address: "649/27/1 Điện Biên Phủ",
   phone: "0393203261")
   50.times do |n|
@@ -17,7 +18,8 @@ User.create!(name: "Lê Phương Tây",
       password: password,
       password_confirmation: password,
       is_admin: false,
-      is_permited: true,
+      activated: true,
+      activated_at: Time.zone.now,
       address: address,
       phone: phone)
   end

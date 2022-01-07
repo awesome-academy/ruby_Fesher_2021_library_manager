@@ -1,5 +1,7 @@
 vi:
   hello: "Chào thế giới"
+  activation: "Xác thực tài khoản"
+  password_reset: "Đặt lại mật khẩu"
   layouts:
     admin:
       title: "Quản lý thư viện LPWANW"
@@ -28,6 +30,11 @@ vi:
       brand: "LPWANW"
       home: "Trang chủ"
       category: "Danh mục"
+      profile: "Trang cá nhân"
+      update: "Cập nhật thông tin"
+      logout: "Đăng xuất"
+      login: "Đăng nhập"
+      signup: "Đăng ký"
   admin:
     admin:
       index:
@@ -175,8 +182,12 @@ vi:
       submit: "Đăng nhập"
       email_holder: "Email đăng nhập..."
       password_holder: "mật khẩu"
+      reset_password: "Quên mật khẩu?"
+      signup: "Bạn chưa có tài khoản? Đăng ký ngay"
     create:
       invalid: "Email hoặc mật khẩu không đúng"
+      p1: "Tài khoản chưa được kích hoạt"
+      p2: "Vui lòng kiểm tra email kích hoạt tài khoản"
   requests:
     create:
       success: "Đặt mượn sách thành công"
@@ -248,7 +259,65 @@ vi:
   categories:
     show:
       not_found: "Không tìm thấy danh mục"
+    form:
+      name: "Tên"
+      email: "Email"
+      phone: "Số điện thoại"
+      address: "Địa chỉ"
+      password: "Mật khẩu"
+      confirmation: "Xác nhận mật khẩu"
+    new:
+      title: "Tạo tài khoản"
+      submit: "Đăng ký"
+      welcome: "Chào bạn đến mới LPWANW"
+    create:
+      fail: "Tạo tải khoản thất bại"
+      please_check_email: "Kiểm tra email để xác nhận tài khoản"
+    update:
+      success: "Cập nhật thành công"
+      fail: "Cập nhật thất bại"
+    edit:
+      title: "Cập nhật thông tin"
+  account_activations:
+    edit:
+      success: "Tài khoản đã được kích hoạt"
+      fail: "Đường dẫn kích hoạt không hợp lệ"
+  password_resets:
+    create:
+      info: "Đã gửi email với đường dẫn đặt lại mật khẩu vui lòng kiểm tra email"
+      fail: "Không tìm thấy địa chỉ email"
+      expired: "Đường dẫn đã quá hạn"
+    update:
+      not_empty: "Mật khẩu không thể để trống"
+      success: "Đặt lại mật khẩu thành công"
+      expired: "Đường dẫn đã quá hạn"
+    edit:
+      title: "Cập nhật mật khẩu"
+      submit: "Cập nhật mật khẩu"
+    new:
+      title: "Đặt lại mật khẩu"
+      forgot_password: "Bạn quên mật khẩu rồi ư"
+      p1: "Chỉ cần nhập email vào bên dưới để nhận được email đặt lại mật khẩu"
+      submit: "Xác nhận"
+      signup: "Đăng ký"
+      login: "Đăng nhập"
+  user_mailer:
+    account_activation:
+      hi: "Chào"
+      welcome: "Chào mừng bạn đến với LPWANW Nhấn vào link bên dưới để kích hoạt tài khoản:"
+      activate: "Kích hoạt:"
+    password_reset:
+      title: "Đặt lại mật khẩu"
+      p1: "Để đặt lại mật khẩu vui lòng ấn vào link đính kèm bên dưới"
+      reset_password: "Đặt lại mật khẩu"
+      p2: "Link này sẽ hết hạn sau 2 giờ"
+      p3: "Nếu bạn không phải người thực hiện yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này
+        và mật khẩu của bạn sẽ không bị thay đổi"
   pagy:
     nav:
       prev: "Trước"
       next: "Tiếp"
+  error:
+    user:
+      not_found: "Không tìm thấy người dùng trong hệ thống"
+      please_login: "Vui lòng đăng nhập"

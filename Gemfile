@@ -7,7 +7,6 @@ gem "active_storage_validations", "0.8.2"
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "config"
-gem "execjs"
 gem "figaro"
 gem "faker", "2.1.2"
 gem "jbuilder", "~> 2.7"

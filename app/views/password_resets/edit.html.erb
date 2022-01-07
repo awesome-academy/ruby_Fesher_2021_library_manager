@@ -1,0 +1,26 @@
+<% provide :title, t(".title") %>
+<div class="row justify-content-center">
+  <div class="col-xl-10 col-lg-12 col-md-9">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
+          <div class="col-lg-6">
+            <div class="p-5">
+              <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+                <%= render "shared/error_messages", object: f.object %>
+                <%= hidden_field_tag :email, @user.email %>
+                <%= f.label :password %>
+                <%= f.password_field :password, class: "form-control" %>
+                <%= f.label :password_confirmation, "Confirmation" %>
+                <%= f.password_field :password_confirmation, class: "form-control" %>
+                <%= f.submit t(".submit"), class: "btn btn-primary btn-user btn-block" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,13 +12,6 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  def logged_in_user
-    return if logged_in?
-
-    flash[:info] = t ".please_login"
-    redirect_to login_url
-  end
-
   def correct_user
     redirect_to root_url unless current_user? @user
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_24_034854) do
+ActiveRecord::Schema.define(version: 2022_01_10_080325) do
 
   create_table "authors", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name"
@@ -107,11 +107,15 @@ ActiveRecord::Schema.define(version: 2021_12_24_034854) do
     t.string "password_digest"
     t.decimal "deposit", precision: 10
     t.boolean "is_admin", default: false
-    t.boolean "is_permited"
     t.string "address"
     t.string "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "activation_digest"
+    t.boolean "activated"
+    t.datetime "activated_at"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email"
   end
 
