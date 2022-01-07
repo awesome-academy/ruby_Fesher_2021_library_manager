@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :comments, only: %i(create)
     resources :books, only: %i(show)
     resources :likes, only: %i(create destroy)
+    resources :authors, only: %i(show)
     namespace :admin do
       root "admin#index"
       resources :authors

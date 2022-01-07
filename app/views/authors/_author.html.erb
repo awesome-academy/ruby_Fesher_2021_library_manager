@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="card col-2">
+    <!-- Product image-->
+    <img
+      class="card-img-top"
+      src="https://dummyimage.com/300x450/dee2e6/6c757d.jpg"
+      alt="..."
+    />
+  </div>
+  <div class="col-5">
+    <div class="card2decs">
+      <h5 class="fw-bolder heading1"><%= @author.name %></h5>
+      <p><%= t ".number_of_books" %>:
+        <span class="float-right">
+          <%= @author.books.count %>
+        </span>
+      </p>
+      <p><%= t ".follower" %>:<span class="float-right"><%= @author.follows.count %></span></p>
+      <p><%= t ".description" %>:<span class="float-right"><%= @author.description %></span></p>
+    </div>
+  </div>
+</div>
