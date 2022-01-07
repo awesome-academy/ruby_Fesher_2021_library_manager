@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :requests, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   # follow
   has_many :follow_books, ->{where followable_type: Book.name},
            class_name: Follow.name, dependent: :destroy
@@ -94,6 +95,23 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.length.expired_hour.hours.ago
+  end
+
+  def like likeable
+    case likeable.class.name.to_sym
+    when :Book
+      like_books << likeable
+    when :Author
+      like_authors << likeable
+    end
+  end
+
+  def unlike like
+    likes.delete like
+  end
+
+  def liked? likeable
+    like_books.include?(likeable) || like_authors.include?(likeable)
   end
 
   class << self

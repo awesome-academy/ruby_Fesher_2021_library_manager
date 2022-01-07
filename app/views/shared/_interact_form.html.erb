@@ -4,19 +4,17 @@
           <div class="bg-white">
               <div class="d-flex flex-row fs-12">
                   <div class="like p-2 cursor">
+                    <%= render partial: "shared/like_form", locals: {object: locals[:object]} %>
                   </div>
-                  <div class="like p-2 cursor">
-                    <i class="fas fa-comment"></i></i>
-                    <span class="ml-1" id="comment_count">
-                      <%= @comments.count %>
-                    </span>
+                  <div class="p-2 cursor">
+                      <%= @comments.count %> <%= t ".comment" %>
                   </div>
               </div>
           </div>
           <div class="bg-light p-2">
             <% if logged_in? %>
               <div id="comment_form">
-                <%= render "shared/comment_form", locals: {id: locals[:id], type: locals[:type]} %>
+                <%= render partial: "shared/comment_form", locals: {object: locals[:object]} %>
               </div>
             <% else %>
               <%= t ".please_login" %>

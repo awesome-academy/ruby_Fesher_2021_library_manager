@@ -1,0 +1,15 @@
+<% @likeable = object %>
+<% if logged_in? %>
+  <div id="form_like">
+    <% if current_user.liked?(@likeable) %>
+      <%= render "shared/unlike" %>
+    <% else %>
+      <%= render "shared/like" %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="btn btn-primary">
+    <%= @likeable.likes.count %>
+    <i class='far fa-thumbs-up'></i>
+  </div>
+<% end %>
