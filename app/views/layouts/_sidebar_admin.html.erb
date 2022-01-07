@@ -54,7 +54,12 @@
       <%= t ".category" %>
     <% end %>
   </li>
-
+  <li class="nav-item">
+    <%= link_to admin_requests_path, {class: "nav-link"} do %>
+      <i class="fas fa-fw fa-list-ol"></i>
+      <%= t ".request" %>
+    <% end %>
+  </li>
   <!-- Divider -->
   <hr class="sidebar-divider">
 

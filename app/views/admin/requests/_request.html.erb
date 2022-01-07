@@ -1,0 +1,24 @@
+<tr>
+  <th scope="row"><%= link_to request.id, [:admin, request] %></th>
+  <td><%= link_to request.user_name, [:admin, request] %></td>
+  <td><%= link_to request.book_name, [:admin, request] %></td>
+  <td><%=  request.begin_day.strftime("%d-%m-%Y") %></td>
+  <td><%= request.end_day.strftime("%d-%m-%Y") %></td>
+  <td>
+    <%= render partial: "badge", locals: {status: request.status} %>
+  </td>
+  <td>
+      <% case request.status.to_sym %>
+      <% when :fresh %>
+          <%= render partial: "status_form", locals: {request: request, status: :confirmed} %>
+          <%= render partial: "status_form", locals: {request: request, status: :rejected} %>
+      <% when :confirmed %>
+          <%= render partial: "status_form", locals: {request: request, status: :delivered} %>
+          <%= render partial: "status_form", locals: {request: request, status: :rejected} %>
+      <% when :delivered %>
+          <%= render partial: "status_form", locals: {request: request, status: :returned} %>
+      <% when :expired %>
+          <%= render partial: "status_form", locals: {request: request, status: :returned} %>
+      <% end %>
+  </td>
+</tr>

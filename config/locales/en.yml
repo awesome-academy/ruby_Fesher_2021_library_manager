@@ -19,6 +19,7 @@ en:
       author: "Authors"
       publisher: "Publisher"
       category: "Category"
+      request: "Request"
     topbar_admin:
       profile: "Hồ sơ"
       settings: "Cài đặt"
@@ -135,6 +136,36 @@ en:
       destroy:
         success: "Successfull delete new Category"
         fail: "Delete fail"
+    requests:
+      status_form:
+        returned: "Return book"
+        confirmed: "Confirm request"
+        rejected: "Reject request"
+        delivered: "Deliver book"
+        msgreturned: "Confirm that client returned book?"
+        msgconfirmed: "Confirm borrow request?"
+        msgrejected: "Reject borrow request?"
+        msgdelivered: "Confirm deliver book"
+      badge:
+        fresh: "Fresh request"
+        confirmed: "Confirmed"
+        delivered: "Delivered"
+        rejected: "Rejected"
+        returned: "Returned"
+        expired: "Expired"
+      index:
+        id: "ID"
+        user_name: "User's name"
+        book_name: "Book's name"
+        begin_day: "Begin day"
+        end_day: "End day"
+        status: "Status"
+        update: "Update"
+      update:
+        success: "Successful update"
+        fail: "Fail to update"
+      load_request:
+        fail: "Request's not found"
   sessions:
     new:
       title: "Login"
