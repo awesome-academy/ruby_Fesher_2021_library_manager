@@ -1,0 +1,4 @@
+<%= form_for request do |f| %>
+  <%= f.hidden_field :status, value: status %>
+  <%= f.submit t("."<< status.to_s), class: "btn btn-#{status.to_s}", data: { confirm: t(".msg"<< status.to_s) } %>
+<% end %>

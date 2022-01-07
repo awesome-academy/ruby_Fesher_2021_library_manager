@@ -1,12 +1,17 @@
 class Request < ApplicationRecord
   PROPERTIES = %i(book_id begin_day end_day status).freeze
+
+  after_find :check_expired
+
   enum status: {
     fresh: 0,
     confirmed: 1,
     delivered: 2,
     rejected: 3,
     returned: 4,
-    expired: 5
+    expired: 5,
+    client_rejected: 6,
+    fresh_expired: 7
   }
   belongs_to :user
   belongs_to :book
@@ -40,5 +45,17 @@ class Request < ApplicationRecord
 
     errors.add I18n.t("requests.errors.quantity"),
                I18n.t("requests.errors.less_than_zero")
+  end
+
+  def check_expired
+    return unless end_day < Time.zone.today
+
+    case status.to_sym
+    when :delivered
+      update status: "expired"
+    when :fresh, :confirmed
+      update status: "fresh_expired"
+      book.returned_book
+    end
   end
 end

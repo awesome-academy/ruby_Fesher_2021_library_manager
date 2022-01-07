@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
     flash[:info] = t ".please_login"
     redirect_to login_url
   end
+
+  def correct_user
+    redirect_to root_url unless current_user? @user
+  end
 end

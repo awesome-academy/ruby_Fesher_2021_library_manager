@@ -151,8 +151,10 @@ vi:
         confirmed: "Đã xác nhận"
         delivered: "Đã giao"
         rejected: "Đã từ chối"
+        client_rejected: "Khách hàng từ chối"
         returned: "Đã trả sách"
         expired: "Quá hạn"
+        fresh_expired: "Khách không nhận sách"
       index:
         id: "ID"
         user_name: "Tên người dùng"
@@ -163,7 +165,7 @@ vi:
         update: "Cập nhật"
       update:
         success: "Cập nhật thành công"
-        fail: "Cập nhật thất bại"
+        fail: "Cập nhật thành công"
       load_request:
         fail: "Không tìm thấy yêu cầu"
   sessions:
@@ -198,6 +200,9 @@ vi:
       beginday: "Ngày mượn"
       endday: "Ngày trả"
       submit: "Xác nhận"
+    update:
+      success: "Cập nhật thành công"
+      fail: "Cập nhật thất bại"
   shared:
     error_messages:
       valid: "Dữ liệu nhập chưa đúng quy định"
@@ -205,6 +210,41 @@ vi:
     book:
       borrow: "Mượn sách"
       quantity: "Số lượng"
+    badge:
+      fresh: "Chờ xác nhận"
+      confirmed: "Đã xác nhận"
+      delivered: "Đang mượn"
+      rejected: "Đã bị admin huỷ"
+      client_rejected: "Tự huỷ"
+      returned: "Đã trả"
+      expired: "Quá hạn trả"
+      fresh_expired: "Quá hạn nhận sách"
+    status_form:
+      returned: "Trả sách"
+      confirmed: "Xác nhận"
+      rejected: "Từ chối"
+      client_rejected: "Huỷ yêu cầu"
+      delivered: "Giao sách"
+      msgreturned: "Xác nhận khách hàng đã trả sách?"
+      msgconfirmed: "Xác nhận yêu cầu mượn sách?"
+      msgrejected: "Từ chối yêu cầu mượn sách?"
+      msgdelivered: "Xác nhận đã giao sách?"
+      msgclient_rejected: "Xác nhận huỷ yêu cầu"
+  users:
+    show:
+      user_name: "Tên người dùng"
+      book_name: "Tên sách"
+      begin_day: "Ngày mượn"
+      end_day: "Ngày trả"
+      status: "Trạng thái"
+      update: "Cập nhật"
+      name: "Tên:"
+      requests: "Yêu cầu"
+    user:
+      name: "Tên: "
+      email: "Email: "
+      address: "Địa chỉ: "
+      phone: "Số điện thoại: "
   pagy:
     nav:
       prev: "Trước"

@@ -151,8 +151,10 @@ en:
         confirmed: "Confirmed"
         delivered: "Delivered"
         rejected: "Rejected"
+        client_rejected: "Client rejected"
         returned: "Returned"
         expired: "Expired"
+        fresh_expired: "Client boomed"
       index:
         id: "ID"
         user_name: "User's name"
@@ -198,6 +200,9 @@ en:
       beginday: "Begin day"
       endday: "End day"
       submit: "Confirm"
+    update:
+      success: "Update success"
+      fail: "Update fail"
   shared:
     error_messages:
       valid: "Invalid Data"
@@ -205,6 +210,41 @@ en:
     book:
       borrow: "Make borrow request"
       quantity: "Amount"
+    badge:
+      fresh: "Wait for confirmation"
+      confirmed: "Confirmed"
+      delivered: "On borrowing"
+      rejected: "Rejected by admin"
+      client_rejected: "Self rejected"
+      returned: "Returned"
+      expired: "Expired"
+      fresh_expired: "Expired"
+    status_form:
+      returned: "Return book"
+      confirmed: "Confirm request"
+      rejected: "Reject request"
+      client_rejected: "Canle request"
+      delivered: "Deliver book"
+      msgreturned: "Confirm that client returned book?"
+      msgconfirmed: "Confirm borrow request?"
+      msgrejected: "Reject borrow request?"
+      msgdelivered: "Confirm deliver book"
+      msgclient_rejected: "Reject borrow request?"
+  users:
+    show:
+      id: "ID"
+      user_name: "User's name"
+      book_name: "Book's name"
+      begin_day: "Begin day"
+      end_day: "End day"
+      status: "Status"
+      update: "Update"
+      requests: "Requests"
+    user:
+      name: "Tên: "
+      email: "Email: "
+      address: "Địa chỉ: "
+      phone: "Số điện thoại: "
   pagy:
     nav:
       prev: "Prev"
