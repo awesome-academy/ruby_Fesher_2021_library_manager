@@ -245,6 +245,9 @@ en:
       email: "Email: "
       address: "Địa chỉ: "
       phone: "Số điện thoại: "
+  categories:
+    show:
+      not_found: "Category not found"
   pagy:
     nav:
       prev: "Prev"
