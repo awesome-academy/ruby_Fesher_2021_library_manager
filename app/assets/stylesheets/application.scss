@@ -43,6 +43,11 @@
   background-color: $confirmed-bg;
   border-color: $confirmed-bg;
 }
+.btn-client_rejected{
+  color: $white;
+  background-color: $rejected-bg;
+  border-color: $rejected-bg;
+}
 
 .edit_request{
   display: inline-block !important;
@@ -68,6 +73,14 @@
   background-color: $rejected-bg;
 }
 
+.badge-client_rejected{
+  color: $white;
+  background-color: $rejected-bg;
+}
+.badge-fresh_expired{
+  color: $white;
+  background-color: $rejected-bg;
+}
 .badge-returned{
   color: $white;
   background-color: $return-bg;

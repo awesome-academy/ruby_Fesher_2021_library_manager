@@ -15,9 +15,7 @@
       <% when :confirmed %>
           <%= render partial: "status_form", locals: {request: request, status: :delivered} %>
           <%= render partial: "status_form", locals: {request: request, status: :rejected} %>
-      <% when :delivered %>
-          <%= render partial: "status_form", locals: {request: request, status: :returned} %>
-      <% when :expired %>
+      <% when :delivered, :expired %>
           <%= render partial: "status_form", locals: {request: request, status: :returned} %>
       <% end %>
   </td>

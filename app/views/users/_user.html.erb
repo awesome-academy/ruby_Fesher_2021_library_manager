@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-2 img"><%= gravatar_for @user %></div>
+  <div class="col-md-6 details">
+    <div class="row">
+      <div class="col-4">
+        <%= t ".name" %>
+      </div>
+      <div class="col">
+        <%= @user.name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <%= t ".phone" %>
+      </div>
+      <div class="col">
+        <%= @user.phone %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <%= t ".email" %>
+      </div>
+      <div class="col">
+        <%= @user.email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <%= t ".address" %>
+      </div>
+      <div class="col">
+        <%= @user.address %>
+      </div>
+    </div>
+  </div>
+</div>

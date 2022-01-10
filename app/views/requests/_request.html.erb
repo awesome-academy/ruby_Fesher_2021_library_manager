@@ -1,0 +1,14 @@
+<tr>
+  <th scope="row"><%= request_counter + 1 %></th>
+  <td><%= link_to request.book_name, "#" %></td>
+  <td><%= request.begin_day.strftime("%d-%m-%Y") %></td>
+  <td><%= request.end_day.strftime("%d-%m-%Y") %></td>
+  <td>
+    <%= render partial: "shared/badge", locals: {status: request.status} %>
+  </td>
+  <td>
+    <% if [:fresh].include?(request.status.to_sym) %>
+      <%= render partial: "shared/status_form", locals: {request: request, status: :client_rejected} %>
+    <% end %>
+  </td>
+</tr>

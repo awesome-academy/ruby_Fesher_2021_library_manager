@@ -8,6 +8,7 @@ length:
   top_category: 5
   zero: 0
   one: 1
+  avatar_size: 120
 regex:
   email: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   phone: !ruby/regexp /(84|0[3|5|7|8|9])+([0-9]{8})\b/i

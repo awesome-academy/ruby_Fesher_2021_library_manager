@@ -17,4 +17,8 @@ class Book < ApplicationRecord
   def requested_book
     update quantity: quantity - Settings.length.one
   end
+
+  def returned_book
+    update quantity: quantity + Settings.length.one
+  end
 end

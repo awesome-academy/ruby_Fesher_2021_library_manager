@@ -8,10 +8,13 @@ class Admin::RequestsController < AdminsController
   def show; end
 
   def update
-    if @request.update status: params[:request][:status]
+    if @request.update(status: params[:request][:status]) &&
+       [:rejected, :returned]
+       .include?(params[:request][:status].to_sym)
+      Book.find_by(id: @request.book_id).returned_book
       flash[:success] = t ".success"
     else
-      flash[:danger] = t ".fail"
+      flash[:info] = t ".fail"
     end
     redirect_to admin_requests_path
   end
