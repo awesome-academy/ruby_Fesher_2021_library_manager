@@ -23,7 +23,7 @@
             aria-labelledby="userDropdown"
           >
             <% load_category.each do |category| %>
-              <%= link_to category.name,"#", {class: "dropdown-item"} %>
+              <%= link_to category.name, category_path(category), {class: "dropdown-item"} %>
             <% end %>
           </div>
         </li>
