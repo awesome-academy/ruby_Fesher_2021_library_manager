@@ -6,7 +6,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :password_digest
       t.decimal :deposit
       t.boolean :is_admin, default: false
-      t.boolean :is_permited
       t.string :address
       t.string :phone
 

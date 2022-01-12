@@ -4,13 +4,12 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by email: params[:session][:email].downcase
     if user&.authenticate params[:session][:password]
-      log_in user
-      if user.is_admin
-        redirect_to admin_root_path
+      if user.activated?
+        log_in? user
       else
-        redirect_to root_path
-      end
 
+        flash[:warning] = t ".p1"
+      end
     else
       flash[:danger] = t ".invalid"
       render :new
