@@ -45,8 +45,11 @@ end
 
 group :test do
   gem "capybara", ">= 3.26"
+  gem "email_spec"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "shoulda-matchers"
+  gem "factory_bot_rails"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

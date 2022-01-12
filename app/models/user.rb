@@ -17,8 +17,7 @@ class User < ApplicationRecord
   # comment
   has_many :comment_books_relationship, ->{where commentable_type: Book.name},
            class_name: Comment.name, dependent: :destroy
-  has_many :comment_authors_relationship,
-           ->{where commentable_type: Author.name},
+  has_many :cmt_authors_relationship, ->{where commentable_type: Author.name},
            class_name: Comment.name, dependent: :destroy
   # like
   has_many :like_books_relationship, ->{where likeable_type: Book.name},
@@ -35,7 +34,7 @@ class User < ApplicationRecord
   # source comment
   has_many :comment_books, through: :comment_books_relationship,
     source_type: Book.name, source: :commentable
-  has_many :comment_authors, through: :comment_authors_relationship,
+  has_many :comment_authors, through: :cmt_authors_relationship,
     source_type: Author.name, source: :commentable
   # source comment
   has_many :like_books, through: :like_books_relationship,

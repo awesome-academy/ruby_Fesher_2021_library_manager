@@ -52,6 +52,16 @@ Rails.application.configure do
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
+  config.action_mailer.delivery_method = :test
+  config.action_mailer.default_url_options = {host: ENV["host"]}
+  config.action_mailer.smtp_settings = {
+    user_name: ENV["mail_user_name"],
+    password: ENV["mail_user_password"],
+    address: ENV["mail_address"],
+    port: ENV["mail_port"],
+    authentication: :cram_md5,
+    enable_starttls_auto: true
+  }
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

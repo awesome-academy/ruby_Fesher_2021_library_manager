@@ -10,6 +10,7 @@ jobs:
   image: sunci/ruby:2.7.0
   script:
   - cp database-ci.yml config/database.yml
+  - cp application-ci.yml config/application.yml
   - bundle _2.1.2_ install --path vendor/bundle
   cache:
   - key: vendor_$CI_BRANCH
