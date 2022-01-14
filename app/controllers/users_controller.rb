@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i(show)
-  before_action :load_user, :correct_user, only: %i(show edit update)
+  before_action :load_user, only: %i(show edit update)
+  before_action :correct_user, only: %i(edit update)
 
   def show
     @pagy, @requests = pagy @user.requests.recent_post
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     return if @user
 
     flash[:danger] = t "errors.user.not_found"
-    redirect_to help_url
+    redirect_to root_path
   end
 
   def correct_user
