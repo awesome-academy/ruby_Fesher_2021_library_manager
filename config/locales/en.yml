@@ -241,6 +241,12 @@ en:
       msgrejected: "Reject borrow request?"
       msgdelivered: "Confirm deliver book"
       msgclient_rejected: "Reject borrow request?"
+    comment:
+      posted: "Posted %{time} ago"
+    comment_form:
+      post: "Comment"
+    interact_form:
+      please_login: "Đăng nhập để thực hiện"
   users:
     show:
       id: "ID"
@@ -316,6 +322,19 @@ en:
       p2: "This link will expire in two hours."
       p3: "If you did not request your password to be reset, please ignore this email
         and your password will stayas it is."
+  comments:
+    create:
+      success: "Commented"
+      fail: "Fail to comment"
+  books:
+    book:
+      author: "Author"
+      publisher: "Publisher"
+      price: "Price"
+      description: "Description"
+    comment_form:
+      post: "Comment"
+      not_found: "Book not found"
   pagy:
     nav:
       prev: "Prev"

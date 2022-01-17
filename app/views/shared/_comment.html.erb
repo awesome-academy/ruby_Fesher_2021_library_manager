@@ -1,0 +1,23 @@
+<div class="bg-light p-2">
+  <div class="d-flex flex-row user-info">
+    <div>
+      <%= gravatar_for comment.user, classes: "rounded-circle", size: Settings.length.image_size %>
+    </div>
+    <div class="d-flex flex-column align-items-start">
+      <span class="d-block font-weight-bold name"><%= comment.user.name %></span>
+      <span class="date text-black-50"><%= sanitize t(".posted", time: time_ago_in_words(comment.created_at)) %></span>
+    </div>
+    <div class="d-flex justify-content-center small text-warning mb-2">
+      <% load_fill_star(comment).times do %>
+        <div class="bi-star-fill"></div>
+      <% end %>
+      <% load_no_fill_star(comment).times do %>
+        <div class="bi-star"></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="mt-2">
+    <p class="comment-text"><%= comment.content %></p>
+  </div>
+  <hr>
+</div>

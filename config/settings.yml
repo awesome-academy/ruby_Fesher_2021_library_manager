@@ -10,6 +10,7 @@ length:
   one: 1
   avatar_size: 120
   expired_hour: 2
+  image_size: 40
 regex:
   email: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   phone: !ruby/regexp /(84|0[3|5|7|8|9])+([0-9]{8})\b/i
