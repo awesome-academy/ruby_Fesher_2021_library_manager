@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :password_resets, except: %i(index show destroy)
     resources :comments, only: %i(create)
     resources :books, only: %i(show)
+    resources :likes, only: %i(create destroy)
     namespace :admin do
       root "admin#index"
       resources :authors

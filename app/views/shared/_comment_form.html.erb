@@ -1,7 +1,7 @@
 <%= form_for(@comment, remote: true) do |f| %>
   <%= render "shared/error_messages", object: f.object %>
-  <%= f.hidden_field :commentable_id, value: locals[:id] %>
-  <%= f.hidden_field :commentable_type, value: locals[:type] %>
+  <%= f.hidden_field :commentable_id, value: object.id %>
+  <%= f.hidden_field :commentable_type, value: object.class.name %>
   <div class="d-flex flex-row align-items-start">
     <%= gravatar_for current_user, classes: "rounded-circle", size: Settings.length.image_size %>
     <%= f.text_area :content, {class: "form-control ml-1 shadow-none textarea"} %>

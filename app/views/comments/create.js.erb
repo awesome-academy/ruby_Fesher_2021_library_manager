@@ -1,4 +1,4 @@
-$('#comment_form').html('<%= j render "shared/comment_form", locals: {id: @commentable.id, type: @commentable.class.name}  %>');
+$('#comment_form').html('<%= j render partial: "shared/comment_form", locals: {object: @commentable} %>');
 $('#comment-section').html('<%= j render partial: "shared/comment", collection: @comments %>');
 $('#comment_count').html('<%= @comments.count %>');
 <% unless @comment_build.valid? %>

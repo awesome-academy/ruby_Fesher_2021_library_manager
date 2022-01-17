@@ -1,0 +1,7 @@
+<%= form_for(get_likes(@likeable),
+  html: {method: :delete}, remote: true) do |f| %>
+  <%= button_tag type: "submit", class: "btn btn-primary" do %>
+    <%= @likeable.likes.count %>
+    <i class='fas fa-thumbs-up'></i>
+  <% end %>
+<% end %>
