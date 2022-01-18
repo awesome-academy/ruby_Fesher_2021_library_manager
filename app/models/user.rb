@@ -1,10 +1,12 @@
 class User < ApplicationRecord
-  PROPERTIES =
-    %i(name email address phone password password_confirmation).freeze
+  PROPERTIES = %i(name email address phone password
+                  password_confirmation remember_me).freeze
 
-  attr_accessor :activation_token, :reset_token
+  devise :confirmable, :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, omniauth_providers: %i(google_oauth2)
+
   before_save :downcase_email
-  before_create :create_activation_digest
 
   has_many :requests, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -58,44 +60,10 @@ class User < ApplicationRecord
   validates :password, presence: true,
     length: {minimum: Settings.length.password_min},
     allow_nil: true, if: :password
-  validates :address, presence: true,
+  validates :address, allow_nil: true, allow_blank: false,
     length: {minimum: Settings.length.password_min}
-  validates :phone, presence: true,
+  validates :phone, allow_nil: true, allow_blank: false,
     format: {with: Settings.regex.phone}
-  has_secure_password
-
-  def is_admin?
-    is_admin
-  end
-
-  def activate
-    update_columns activated: true, activated_at: Time.zone.now
-  end
-
-  def send_activation_email
-    UserMailer.account_activation(self).deliver_now
-  end
-
-  def authenticated? attribute, token
-    digest = send "#{attribute}_digest"
-    return false if digest.nil?
-
-    BCrypt::Password.new(digest).is_password?(token)
-  end
-
-  def create_reset_digest
-    self.reset_token = User.new_token
-    update_attribute(:reset_digest, User.digest(reset_token))
-    update_attribute(:reset_sent_at, Time.zone.now)
-  end
-
-  def send_password_reset_email
-    UserMailer.password_reset(self).deliver_now
-  end
-
-  def password_reset_expired?
-    reset_sent_at < Settings.length.expired_hour.hours.ago
-  end
 
   def like likeable
     case likeable.class.name.to_sym
@@ -114,18 +82,15 @@ class User < ApplicationRecord
     like_books.include?(likeable) || like_authors.include?(likeable)
   end
 
-  class << self
-    def digest string
-      cost = if ActiveModel::SecurePassword.min_cost
-               BCrypt::Engine::MIN_COST
-             else
-               BCrypt::Engine.cost
-             end
-      BCrypt::Password.create string, cost: cost
-    end
-
-    def new_token
-      SecureRandom.urlsafe_base64
+  def self.from_omniauth auth
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.name = auth.info.name
+      user.phone = auth.info.phone
+      user.address = auth.info.address
+      user.skip_confirmation!
+      user.save
     end
   end
 
@@ -133,10 +98,5 @@ class User < ApplicationRecord
 
   def downcase_email
     self.email = email.downcase
-  end
-
-  def create_activation_digest
-    self.activation_token = User.new_token
-    self.activation_digest = User.digest activation_token
   end
 end

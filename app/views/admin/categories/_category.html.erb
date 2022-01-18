@@ -4,7 +4,7 @@
     <%= link_to category.name, [:admin, category] %>
   </div>
   <div class="col">
-    <% if current_user.is_admin? %>
+    <% if current_user.is_admin %>
       <%= link_to t(".edit"), edit_admin_category_path(category),
                   class: "btn btn-warning" %>
       <%= link_to t(".delete"), [:admin, category], method: :delete,

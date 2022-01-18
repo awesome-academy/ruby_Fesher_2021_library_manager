@@ -4,7 +4,7 @@
     <%= link_to publisher.name, [:admin, publisher] %>
   </div>
   <div class="col">
-    <% if current_user.is_admin? %>
+    <% if current_user.is_admin %>
       <%= link_to t(".edit"), edit_admin_publisher_path(publisher),
         class: "btn btn-warning" %>
       <%= link_to t(".delete"), [:admin, publisher], method: :delete,
