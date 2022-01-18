@@ -25,6 +25,14 @@ RSpec.describe LikesController, type: :controller do
         expect(response).to redirect_to book
       end
     end
+
+    context "when login like author" do
+      it "redirect to author" do
+        log_in user
+        post :create, params: {locale: I18n.locale, likeable_id: author.id, likeable_type: "Author"}
+        expect(response).to redirect_to author
+      end
+    end
   end
 
   describe "DELETE #destroy" do
