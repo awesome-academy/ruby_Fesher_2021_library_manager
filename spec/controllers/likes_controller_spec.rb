@@ -14,13 +14,13 @@ RSpec.describe LikesController, type: :controller do
     context "when not login" do
       it "redirect to login" do
         post :create, params: {locale: I18n.locale, likeable_id: book.id, likeable_type: "Book"}
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
     context "when login like book" do
       it "redirect to book" do
-        log_in user
+        sign_in user
         post :create, params: {locale: I18n.locale, likeable_id: book.id, likeable_type: "Book"}
         expect(response).to redirect_to book
       end
@@ -28,7 +28,7 @@ RSpec.describe LikesController, type: :controller do
 
     context "when login like author" do
       it "redirect to author" do
-        log_in user
+        sign_in user
         post :create, params: {locale: I18n.locale, likeable_id: author.id, likeable_type: "Author"}
         expect(response).to redirect_to author
       end
@@ -45,15 +45,15 @@ RSpec.describe LikesController, type: :controller do
                                 category_id: category.id}
     before(:each) do
       user.like book
-      log_in user
-      @like = get_likes(book)
+      sign_in user
+      @like = user.likes.find_by likeable: book
     end
 
     context "when not login" do
       it "redirect to login" do
-        log_out
+        sign_out user
         delete :destroy, params: {locale: I18n.locale, id: @like.id}
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to redirect_to new_user_session_path
       end
     end
 

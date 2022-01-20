@@ -14,7 +14,7 @@ RSpec.describe CommentsController, type: :controller do
       let(:comment){FactoryBot.attributes_for :comment, commentable_id: book.id, commentable_type: "Book"}
       it "redirect to login" do
         post :create, params: {locale: I18n.locale, comment: comment}
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to new_user_session_path
       end
     end
 
@@ -30,7 +30,7 @@ RSpec.describe CommentsController, type: :controller do
                                               commentable_id: book.id,
                                               commentable_type: "Book"}
       it "redirect to book" do
-        log_in user
+        sign_in user
         post :create, params: {locale: I18n.locale, comment: comment}
         expect(response).to redirect_to book
       end
@@ -49,7 +49,7 @@ RSpec.describe CommentsController, type: :controller do
                                               commentable_type: "Book",
                                               content: ""}
       before do
-        log_in user
+        sign_in user
         post :create, params: {locale: I18n.locale, comment: comment}
       end
 
