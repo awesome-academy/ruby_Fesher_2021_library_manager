@@ -335,6 +335,19 @@ en:
     comment_form:
       post: "Comment"
       not_found: "Book not found"
+    index:
+      title: "Search"
+      price: "Price"
+      min: "Min"
+      max: "Max"
+      category: "Category"
+      author: "Author"
+      clear: "Clear"
+      found: "Approximately %{size} results"
+      sort_score: "Sort by score"
+      sort_likes: "Sort by Like"
+      sort_comments: "Sort by Comments"
+      sort_follows: "Sort by Follows"
   pagy:
     nav:
       prev: "Prev"

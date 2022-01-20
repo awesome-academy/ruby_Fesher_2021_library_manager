@@ -334,6 +334,19 @@ vi:
       post: "Nhận xét"
     show:
       not_found: "Không tìm thấy sách"
+    index:
+      title: "Tìm kiếm"
+      price: "Giá"
+      min: "Thấp nhất"
+      max: "Cao nhất"
+      category: "Danh mục"
+      author: "Tác giả"
+      clear: "Làm mới"
+      found: "Tìm thấy %{size} kết quả"
+      sort_score: "Sắp theo đánh giá"
+      sort_likes: "Sắp theo Yêu thích"
+      sort_comments: "Sắp theo Bình luận"
+      sort_follows: "Sắp theo số theo dõi"
   pagy:
     nav:
       prev: "Trước"

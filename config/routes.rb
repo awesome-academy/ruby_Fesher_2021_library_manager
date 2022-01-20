@@ -15,9 +15,10 @@ Rails.application.routes.draw do
     resources :account_activations, only: %i(edit)
     resources :password_resets, except: %i(index show destroy)
     resources :comments, only: %i(create)
-    resources :books, only: %i(show)
+    resources :books, only: %i(index show)
     resources :likes, only: %i(create destroy)
     resources :authors, only: %i(show)
+    get "author/search", to: "authors#search"
     namespace :admin do
       root "admin#index"
       resources :authors

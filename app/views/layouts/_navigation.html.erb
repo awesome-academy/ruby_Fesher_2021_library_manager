@@ -27,6 +27,18 @@
             <% end %>
           </div>
         </li>
+        <li>
+          <%= search_form_for Book.ransack() do |f| %>
+            <div class="input-group">
+              <%= f.search_field :name_cont, {class: "form-control"} %>
+              <div class="input-group-append">
+                <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+                  <i class="fas fa-search"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </li>
       </ul>
       <% if logged_in? %>
         <div class="nav-item dropdown no-arrow ml-auto">

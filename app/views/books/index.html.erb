@@ -1,0 +1,95 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <aside class="col-md-3">
+      <div class="card">
+        <header class="card-header">
+          <h6 class="title"> <%= t ".title" %> </h6>
+        </header>
+        <%= search_form_for @q do |f| %>
+          <div class="filter-content">
+            <div class="input-group px-3">
+              <%= f.search_field :name_cont, {class: "form-control"} %>
+              <div class="input-group-append">
+                <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+                  <i class="fas fa-search"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <article class="card-group-item">
+            <header class="card-header">
+              <h6 class="title"><%= t ".price" %> </h6>
+            </header>
+            <div class="filter-content">
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label><%= t ".min" %></label>
+                    <%= f.number_field :price_gteq, class: "form-control" %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label><%= t ".max" %></label>
+                    <%= f.number_field :price_lteq, class: "form-control" %>
+                  </div>
+              </div>
+            </div>
+          </article>
+          <article class="card-group-item">
+            <header class="card-header">
+              <h6 class="title"><%= t ".category" %> </h6>
+            </header>
+            <div class="filter-content">
+              <div class="card-body">
+                <% load_category.each do |category| %>
+                  <div class="custom-control custom-checkbox">
+                    <% is_checked = params[:query][:category_id_in]&.include?(category.id.to_s) if params[:query] %>
+                    <%= f.check_box :category_id_in,
+                                    {multiple: true, class: "custom-control-input", checked: is_checked, id: category.id},
+                                    category.id, nil %>
+                    <label class="custom-control-label" for="<%= category.id %>"><%= category.name %></label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </article>
+          <article class="card-group-item">
+            <header class="card-header">
+              <h6 class="title"><%= t ".author" %> </h6>
+            </header>
+            <div class="filter-content">
+              <div class="card-body">
+                <%= f.search_field :author_name_cont, {class: "form-control", data: {behavior: "autocomplete"}}%>
+              </div>
+            </div>
+          </article>
+          <div class="d-flex justify-content-center py-3">
+            <%= f.submit t(".title") %>
+          </div>
+        <% end %>
+        <div class="d-flex justify-content-center pb-3">
+          <%= search_form_for @q do |f| %>
+            <%= f.submit t(".clear") %>
+          <% end %>
+        </div>
+      </div>
+  </aside>
+  <main class="col">
+    <%= t(".found", size: @q.result.length) %>
+    <div class="py-3  gap-3">
+      <button type="button" class="btn btn-outline-secondary">
+        <%= sort_link(@q, :rate_score, t(".sort_score"), default_order: :desc)%>
+      </button>
+      <button type="button" class="btn btn-outline-secondary">
+        <%= sort_link(@q, :comments_count, t(".sort_comments")) %>
+      </button>
+      <button type="button" class="btn btn-outline-secondary">
+        <%= sort_link(@q, :likes_count, t(".sort_likes")) %>
+      </button>
+    </div>
+    <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+      <%= render partial: "shared/book", collection: @books %>
+    </div>
+    <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+  </main>
+</div>

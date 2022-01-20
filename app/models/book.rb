@@ -4,6 +4,22 @@ class Book < ApplicationRecord
   belongs_to :category, optional: true
 
   scope :top_score, ->{order rate_score: :desc}
+  scope :sort_by_likes_count_asc, (lambda do
+    left_joins(:likes).group(:id).order("COUNT(likes.id) ASC")
+  end)
+  scope :sort_by_likes_count_desc, (lambda do
+    left_joins(:likes).group(:id).order("COUNT(likes.id) DESC")
+  end)
+  scope :sort_by_comments_count_asc, (lambda do
+    left_joins(:comments).group(:id).order("COUNT(comments.id) ASC")
+  end)
+  scope :sort_by_comments_count_desc, (lambda do
+    left_joins(:comments).group(:id).order("COUNT(comments.id) DESC")
+  end)
+
+  ransacker :created_at do
+    Arel.sql("date(created_at)")
+  end
 
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :likes, as: :likeable, dependent: :destroy
