@@ -1,5 +1,5 @@
 class Admin::RequestsController < AdminsController
-  before_action :load_request, except: %i(index)
+  load_and_authorize_resource
 
   def index
     @pagy, @requests = pagy Request.recent_post
@@ -17,15 +17,5 @@ class Admin::RequestsController < AdminsController
       flash[:info] = t ".fail"
     end
     redirect_to admin_requests_path
-  end
-
-  private
-
-  def load_request
-    @request = Request.find_by id: params[:id]
-    return if @request
-
-    flash[:danger] = t ".load_fail"
-    redirect_to admin_root_path
   end
 end

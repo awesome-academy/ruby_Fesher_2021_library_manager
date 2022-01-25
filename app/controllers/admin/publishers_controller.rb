@@ -1,5 +1,6 @@
 class Admin::PublishersController < AdminsController
-  before_action :load_publisher, except: %i(index new create)
+  load_and_authorize_resource
+
   def index
     @pagy, @publishers = pagy Publisher.recent_added
   end
@@ -46,13 +47,5 @@ class Admin::PublishersController < AdminsController
 
   def publisher_params
     params.require(:publisher).permit Publisher::PROPERTIES
-  end
-
-  def load_publisher
-    @publisher = Publisher.find_by id: params[:id]
-    return if @publisher
-
-    flash[:danger] = t ".fail"
-    redirect_to admin_root_path
   end
 end

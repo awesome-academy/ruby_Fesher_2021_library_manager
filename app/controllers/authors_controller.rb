@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
-  before_action :load_author, only: :show
   before_action :force_json, only: :search
+  load_and_authorize_resource
 
   def show
     @comment = Comment.new
@@ -13,14 +13,6 @@ class AuthorsController < ApplicationController
   end
 
   private
-
-  def load_author
-    @author = Author.find_by id: params[:id]
-    return if @author
-
-    flash[:danger] = t ".not_found"
-    redirect_to root_url
-  end
 
   def force_json
     request.format = :json

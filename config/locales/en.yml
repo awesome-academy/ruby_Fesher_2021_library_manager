@@ -2,6 +2,7 @@ en:
   hello: "hello world"
   activation: "Account validation"
   password_reset: "Password reset"
+  no_permission: "You don't have permission"
   layouts:
     admin:
       title: "LPWANW Library manager"

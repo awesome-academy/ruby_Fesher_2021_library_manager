@@ -25,6 +25,13 @@ RSpec.describe BooksController, type: :controller do
         expect(response).to redirect_to root_path
       end
     end
-
   end
+
+  describe "GET #index" do
+    it "render index" do
+      get :index
+      expect(response).to render_template(:index)
+    end
+  end
+
 end

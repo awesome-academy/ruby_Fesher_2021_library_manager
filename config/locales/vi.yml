@@ -2,6 +2,7 @@ vi:
   hello: "Chào thế giới"
   activation: "Xác thực tài khoản"
   password_reset: "Đặt lại mật khẩu"
+  not_permission: "Bạn không có quyền hạn"
   layouts:
     admin:
       title: "Quản lý thư viện LPWANW"
@@ -53,6 +54,7 @@ vi:
         rusure: "Bạn chắc chứ?"
         edit: "Chỉnh sửa"
         add: "Thêm"
+        not_found: "Không tìm thấy tác giả"
       author:
         delete: "Xoá"
         rusure: "Bạn chắc chứ?"
@@ -61,18 +63,22 @@ vi:
       edit:
         submit: "Cập nhật"
         title: "Chỉnh sửa tác giả"
+        not_found: "Không tìm thấy tác giả"
       update:
         success: "Cập nhật thành công"
         fail: "Cập nhật thất bại"
+        not_found: "Không tìm thấy tác giả"
       destroy:
         fail: "Xoá thất bại"
         success: "Xoá thành công"
+        not_found: "Không tìm thấy tác giả"
       show:
         delete: "Xoá"
         rusure: "Bạn chắc chứ?"
         edit: "Chỉnh sửa"
         add: "Thêm"
         fail: "Không tìm thấy tác giả"
+        not_found: "Không tìm thấy tác giả"
       create:
         success: "Tạo tác giả thành công"
         fail: "Tạo tác giả thất bại"
