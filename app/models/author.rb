@@ -10,6 +10,7 @@ class Author < ApplicationRecord
   has_many :users_follows, through: :follows, source: :user
 
   scope :recent_added, ->{order created_at: :desc}
+  scope :like_name, ->(q){where("name LIKE ?", "%#{q}%")}
 
   validates :name, presence: true,
     length: {maximum: Settings.length.user_name_max}

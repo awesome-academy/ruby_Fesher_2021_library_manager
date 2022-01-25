@@ -1,3 +1,4 @@
+@import "easy-autocomplete/dist/easy-autocomplete";
 @import "sb-admin-2.min";
 @import "toastr/toastr";
 @import "color";
@@ -146,4 +147,21 @@
   p {
     font-size: 12px
   }
+}
+
+body {
+  position: relative;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
 }
