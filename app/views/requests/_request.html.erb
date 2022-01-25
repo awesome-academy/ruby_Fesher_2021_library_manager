@@ -7,7 +7,7 @@
     <%= render partial: "shared/badge", locals: {status: request.status} %>
   </td>
   <td>
-    <% if [:fresh].include?(request.status.to_sym) %>
+    <% if can? :update, request %>
       <%= render partial: "shared/status_form", locals: {request: request, status: :client_rejected} %>
     <% end %>
   </td>

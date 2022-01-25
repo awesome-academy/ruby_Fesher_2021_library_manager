@@ -1,5 +1,6 @@
 class Admin::AuthorsController < AdminsController
-  before_action :load_author, except: %i(index new create)
+  load_and_authorize_resource
+
   def index
     @pagy, @authors = pagy(Author.recent_added)
   end
@@ -46,13 +47,5 @@ class Admin::AuthorsController < AdminsController
 
   def author_params
     params.require(:author).permit Author::PROPERTIES
-  end
-
-  def load_author
-    @author = Author.find_by id: params[:id]
-    return if @author
-
-    flash[:danger] = t ".fail"
-    redirect_to admin_root_path
   end
 end

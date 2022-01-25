@@ -3,6 +3,7 @@ class RequestsController < ApplicationController
   before_action :load_book, only: %i(new)
   before_action :load_request, except: %i(index new create)
   before_action :check_status, only: %i(update)
+  authorize_resource
 
   def new
     @request = current_user.requests.build
