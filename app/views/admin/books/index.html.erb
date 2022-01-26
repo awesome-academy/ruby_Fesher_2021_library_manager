@@ -1,0 +1,26 @@
+<% provide :title, t(".title") %>
+<h1>
+  <%= t ".title" %>
+</h1>
+<div class="row">
+  <div class="col curd-container">
+    <%= link_to t(".add"), new_admin_book_path, class: "btn btn-success" %>
+  </div>
+</div>
+<hr class="sidebar-divider">
+
+<%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1%>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><%= t ".index" %></th>
+      <th scope="col"><%= t ".name" %></th>
+      <th scope="col"><%= t ".quantity" %></th>
+      <th scope="col"><%= t ".rate_score" %></th>
+      <th scope="col"><%= t ".update" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @books %>
+  </tbody>
+</table>

@@ -176,6 +176,59 @@ en:
         fail: "Fail to update"
       load_request:
         fail: "Request's not found"
+    books:
+      book:
+        edit: "Edit"
+        delete: "Delete"
+      form:
+        name: "Name"
+        price: "Price"
+        description: "Description"
+        number_of_page: "Number of page"
+        quantity: "Quantity"
+        images: "Images"
+        remove: "Remove"
+        ursure: "Are you sure?"
+      edit:
+        title: "Edit"
+        submit: "Edit"
+      index:
+        title: "Books"
+        add: "Add"
+        name: "Name"
+        price: "Price"
+        description: "Description"
+        number_of_page: "Number of page"
+        quantity: "Quantity"
+        index: "Index"
+        id: "ID"
+        rate_score: "Rate score"
+        update: "Update"
+      new:
+        title: "New Books"
+        submit: "Add"
+        add: "Add new book"
+      show:
+        edit: "Edit"
+        delete: "Delete"
+        author: "Author"
+        publisher: "Publisher"
+        category: "Category"
+        name: "Name"
+        price: "Price"
+        description: "Description"
+        number_of_page: "Number of page"
+        quantity: "Quantity"
+        comment: "Comment"
+      create:
+        success: "Success"
+        fail: "Fail"
+      update:
+        success: "Success"
+        fail: "Fail"
+      destroy:
+        success: "Success"
+        fail: "Fail"
   sessions:
     new:
       title: "Login"

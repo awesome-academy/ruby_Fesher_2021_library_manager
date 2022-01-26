@@ -24,6 +24,11 @@ Rails.application.routes.draw do
       resources :authors
       resources :publishers
       resources :categories
+      resources :books do
+        member do
+          delete :delete_image_attachment
+        end
+      end
       resources :requests, only: %i(index show update)
     end
   end
