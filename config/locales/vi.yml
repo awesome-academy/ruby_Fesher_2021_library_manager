@@ -181,6 +181,62 @@ vi:
         fail: "Cập nhật thành công"
       load_request:
         fail: "Không tìm thấy yêu cầu"
+    books:
+      book:
+        edit: "Chỉnh sửa"
+        delete: "Xoá"
+      form:
+        name: "Tên"
+        price: "Giá"
+        description: "Mô tả"
+        number_of_page: "Số trang"
+        quantity: "Số lượng"
+        images: "Hình ảnh"
+        remove: "Xoá"
+        ursure: "Bạn chắc chứ?"
+        author: "Tác giả"
+        publisher: "Nhà xuất bản"
+        category: "Danh mục"
+      edit:
+        title: "Chỉnh sửa"
+        submit: "Chỉnh sửa"
+      index:
+        title: "Sách"
+        add: "Thêm"
+        name: "Tên"
+        price: "Giá"
+        description: "Mô tả"
+        number_of_page: "Số trang"
+        quantity: "Số lượng"
+        index: "Số thứ tự"
+        id: "ID"
+        rate_score: "Điểm đánh giá"
+        update: "Cập nhật"
+      new:
+        title: "Mới Sách"
+        submit: "Thêm"
+        add: "Thêm sách mới"
+      show:
+        edit: "Chỉnh sửa"
+        delete: "Xoá"
+        author: "Tác giả"
+        publisher: "Nhà xuất bản"
+        category: "Danh mục"
+        name: "Tên"
+        price: "Giá"
+        description: "Mô tả"
+        number_of_page: "Số trang"
+        quantity: "Số lượng"
+        comment: "Nhận xét"
+      create:
+        success: "Thành công"
+        fail: "Thất bại"
+      update:
+        success: "Thành công"
+        fail: "Thất bại"
+      destroy:
+        success: "Thành công"
+        fail: "Thất bại"
   sessions:
     new:
       title: "Đăng nhập"

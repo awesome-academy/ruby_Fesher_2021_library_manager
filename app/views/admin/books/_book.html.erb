@@ -1,0 +1,12 @@
+<tr>
+  <th scope="row"><%= book_counter + 1 %></th>
+  <td><%= link_to book.name, [:admin, book] %></td>
+  <td><%= book.quantity %></td>
+  <td><%= book.rate_score %></td>
+  <td>
+    <%= link_to t(".edit"), edit_admin_book_path(book),
+    class: "btn btn-warning" %>
+  <%= link_to t(".delete"), [:admin, book], method: :delete,
+      class: "btn btn-danger", data: { confirm: t(".rusure") } %>
+  </td>
+</tr>

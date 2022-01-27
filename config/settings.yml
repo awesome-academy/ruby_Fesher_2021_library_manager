@@ -14,3 +14,5 @@ length:
 regex:
   email: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   phone: !ruby/regexp /(84|0[3|5|7|8|9])+([0-9]{8})\b/i
+image_type: ["image/jpeg", "image/gif", "image/png"]
+image_size: 5

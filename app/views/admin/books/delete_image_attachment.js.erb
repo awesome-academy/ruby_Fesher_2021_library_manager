@@ -1,0 +1,11 @@
+$('#book_show').html(`
+  <% @book.images.each do |image| %>
+    <div class="d-block mb-4 h-100">
+      <%= j image_tag image, {class: "img-fluid img-thumbnail"}%>
+      <%= j link_to t(".remove"), delete_image_attachment_admin_book_url(image.id),
+              method: :delete,
+              data: { confirm: t(".rusure")},
+              remote: true %>
+    </div>
+  <% end %>
+`);

@@ -12,6 +12,7 @@ import "bootstrap"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "bootstrap-sass"
 import "./author"
+import "./preview_image"
 require("easy-autocomplete")
 require("./sb-admin-2")
 global.toastr = require("toastr")
