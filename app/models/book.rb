@@ -11,6 +11,7 @@ class Book < ApplicationRecord
 
   scope :top_score, ->{order rate_score: :desc}
   scope :recent_added, ->{order created_at: :desc}
+  scope :find_for_cart, ->(ids){where id: ids}
   scope :sort_by_likes_count_asc, (lambda do
     left_joins(:likes).group(:id).order("COUNT(likes.id) ASC")
   end)

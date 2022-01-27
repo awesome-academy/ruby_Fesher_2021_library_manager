@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
   protect_from_forgery with: :exception
 
-  before_action :set_locale
+  before_action :set_locale, :init_cart
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
@@ -28,6 +28,10 @@ class ApplicationController < ActionController::Base
 
   def load_books
     @q = Book.ransack(params[:query])
+  end
+
+  def init_cart
+    session[:cart] ||= []
   end
 
   def access_denied

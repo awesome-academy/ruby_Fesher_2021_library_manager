@@ -1,0 +1,20 @@
+<div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
+  <div class="col-2 mr-1">
+    <%= image_tag(book.images[0], {class: "d-block rounded book-image"}) if book.images[0] %>
+  </div>
+  <div class="col align-items-center product-details">
+    <span class="font-weight-bold">
+      <%= link_to book.name, book %>
+    </span>
+  </div>
+  <div class="col">
+    <h5 class="text-grey">
+      <%= number_to_currency book.price, locale: :vi %>
+    </h5>
+  </div>
+  <div class="d-flex align-items-center">
+    <%= link_to cart_path(book.id), method: :delete, class: "btn btn-outline-dark mt-auto", remote: true do %>
+      <i class="fa fa-trash mb-1 text-danger"></i>
+    <% end %>
+  </div>
+</div>

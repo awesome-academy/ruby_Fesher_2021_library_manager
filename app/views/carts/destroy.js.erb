@@ -1,0 +1,2 @@
+$('#cart_count').html('<%= session[:cart].count %>');
+$('#cart_books').html('<%= j render partial: "book", collection: @books, as: :book %>');
