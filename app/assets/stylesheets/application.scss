@@ -173,3 +173,21 @@ footer {
 .gallery-w{
   width: 100px;
 }
+
+.cart {
+  position: relative;
+  height: 48px !important;
+  width: 50px;
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  padding: 11px;
+  border-radius: 5px;
+  font-size: 21px
+}
+
+.book-image{
+  height: 80px;
+}

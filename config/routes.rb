@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :books, only: %i(index show)
     resources :likes, only: %i(create destroy)
     resources :authors, only: %i(show)
+    resources :carts, only: %i(index create destroy)
     get "author/search", to: "authors#search"
     namespace :admin do
       root "admin#index"

@@ -40,8 +40,16 @@
           <% end %>
         </li>
       </ul>
+      <div class="nav-item ml-auto">
+        <div class="cart">
+          <%= link_to carts_path do %>
+            <i class="fa fa-shopping-cart"></i>
+          <% end %>
+          <span class="badge badge-danger" id="cart_count"><%= session[:cart].count %></span>
+        </div>
+      </div>
       <% if logged_in? %>
-        <div class="nav-item dropdown no-arrow ml-auto">
+        <div class="nav-item dropdown no-arrow">
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -81,7 +89,7 @@
           </div>
         </div>
       <% else %>
-        <div class="nav-item btn btn-outline-dark ml-auto">
+        <div class="nav-item btn btn-outline-dark">
           <%= link_to t(".login"), login_path %>
         </div>
         <div class="nav-item btn btn-outline-dark">

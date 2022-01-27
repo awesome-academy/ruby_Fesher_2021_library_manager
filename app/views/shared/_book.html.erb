@@ -30,10 +30,12 @@
     <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
       <div class="text-center">
         <% if book.quantity > Settings.length.zero %>
-          <%= link_to t(".borrow"), new_request_path(book_id: book.id), {class: "btn btn-outline-dark mt-auto"} %>
+          <%= link_to carts_path(book_id: book.id), method: :post, class: "btn btn-outline-dark mt-auto", remote: true do %>
+            <i class="fas fa-shopping-cart"></i> <%= t ".add_to_cart" %>
+          <% end %>
         <% else %>
           <button type="button" class="btn btn-outline-dark mt-auto" disabled>
-            <%= t(".borrow") %>
+            <i class="fas fa-shopping-cart"></i> <%= t ".add_to_cart" %>
           </button>
         <% end %>
       </div>

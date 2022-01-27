@@ -283,6 +283,7 @@ vi:
     book:
       borrow: "Mượn sách"
       quantity: "Số lượng"
+      add_to_cart: "Thêm vào giỏ hàng"
     badge:
       fresh: "Chờ xác nhận"
       confirmed: "Đã xác nhận"
@@ -409,6 +410,15 @@ vi:
       sort_likes: "Sắp theo Yêu thích"
       sort_comments: "Sắp theo Bình luận"
       sort_follows: "Sắp theo số theo dõi"
+  carts:
+    index:
+      title: "Giỏ hàng"
+      cart: "Giỏ hàng"
+      book: "Sách"
+      name: "Tên"
+      price: "Giá"
+      total: "Tổng"
+      submit: "Tạo đơn mượn"
   pagy:
     nav:
       prev: "Trước"

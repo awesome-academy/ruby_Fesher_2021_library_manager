@@ -15,4 +15,8 @@ module SessionsHelper
   def load_user_name
     current_user.name
   end
+
+  def total_price books
+    books.reduce(0){|a, e| a + e.price}
+  end
 end
